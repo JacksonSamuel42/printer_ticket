@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thermal Printer</title>
+</head>
+
+<body>
+    <button id="btnImprimir">Imprimir</button>
+</body>
+
+<script>
+
+    const btn = document.getElementById('btnImprimir')
+    btn.addEventListener('click', () => {
+        fetch('ticket.php', {
+            method: 'POST'
+        }).then(res => res.json()).then(data => {
+            alert('Printing....');
+        }).catch(erro => {
+            alert('Error' + erro);
+        })
+    })
+
+</script>
+
+</html>
